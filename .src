@@ -1,0 +1,43 @@
+create database LojaDoMundo;
+use LojaDoMundo;
+
+create table Produtos (
+id_produto int primary key,
+nome varchar(100) not null,
+categoria varchar(100) not null,
+preco decimal(5, 2) not null,
+quant_estq int not null
+);
+
+insert into Produtos (id_produto, nome, categoria, preco, quant_estq) values
+(1, 'Barraca para 2 Pessoas Coleman', 'Camping', 389.90, 10),
+(2, 'Canivete Tático Multifuncional', 'Sobrevivência', 99.00, 25),
+(3, 'Kit de Primeiros Socorros Compacto', 'Sobrevivência', 59.90, 30),
+(4, 'Garrafa Esportiva 750ml', 'Sports', 39.90, 50),
+(5, 'Bola de Futebol Society Topper', 'Sports', 89.99, 20),
+(6, 'Garrafa Térmica Invicta 1L', 'Camping', 79.90, 18);
+
+
+select * from Produtos;  /* vou usar para mostrar o resultado, antes e depois, das minhas alterações. */
+
+update Produtos
+set quant_estq = 20
+where id_produto = 1;
+
+select * from Produtos;
+
+update Produtos
+set preco = 89.99
+where id_produto = 2;
+
+select * from Produtos;
+
+delete from Produtos
+where Id_produto = 6;
+
+select * from Produtos;
+
+delete from Produtos
+where Id_produto = 5;
+
+select * from Produtos;
